@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Articles</title>
+    <style>
+        body {
+            background-color: rgb(237, 206, 255);
+        }
+
+        .article {
+            border-bottom: 1px solid #ccc;
+            background-color: #e1e1e1;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+    <h1>📰Article Viewer</h1>
+    {% if articles %}
+        {% for article in articles %}
+        <div class="article">
+            <h2>{{ article.title }}</h2>
+            <p><strong>Author: </strong>{{ article.author }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>🙁No Articles Yet</p>
+    {% endif %}
+</html>

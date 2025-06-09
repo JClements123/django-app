@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gallery/styles.css' %}">
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem;" class="grid">
+        {% for photo in photos %}
+        <div style="border: 2px solid {% if photo.featured %}gold{% else %}#ccc{% endif %}; padding: 10px" class="card">
+            <img src="{{ photo.image.url }}" width="200" style="display: block;">
+            <p class="caption">{{ photo.caption }}</p>
+            <p class="photographer">{{ photo.photographer }}</p>
+            {% if photo.featured %}
+            <strong>⭐Featured!</strong>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

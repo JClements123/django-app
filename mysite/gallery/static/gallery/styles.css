@@ -1,0 +1,28 @@
+body {
+    background-color: #9ed5ed;
+    font-family: 'Georgia', sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+.card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    width: 250px;
+    height: 375px;
+}
+
+.card:hover {
+    transition: 0.3s;
+    border-radius: 16px;
+    width: 265px;
+    height: auto;
+    background-color: #eae7e7;
+}
+
+.caption {
+    font-style: italic;
+}
